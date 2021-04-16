@@ -20,4 +20,6 @@ const <%= name %>: React.FC<<%= name %>Props> = ({width = <%= width %>, height =
   </Box>
 )
 
+<%= name %>.displayName = '<%= name %>';
+
 export default <%= name %>;
