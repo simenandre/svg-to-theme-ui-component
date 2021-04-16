@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.0](https://www.github.com/cobraz/svg-to-theme-ui-component/compare/v1.1.1...v1.2.0) (2021-04-16)
+
+
+### Features
+
+* Add file-name casing helper ([913760b](https://www.github.com/cobraz/svg-to-theme-ui-component/commit/913760b5cfbcae4b281f02d1531d48fe224a3de8))
+
 ### [1.1.1](https://www.github.com/cobraz/svg-to-theme-ui-component/compare/v1.1.0...v1.1.1) (2021-04-16)
 
 
