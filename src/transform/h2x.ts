@@ -95,18 +95,25 @@ export const h2x = (code: string, state: any) => {
   // First pass to extract out attributes and children
   transform(code, { plugins: [extractChildren, processSVG], state });
 
+  console.log(state);
+
   // Second pass over the extracted children
-  return state.children.map((replacement: any) =>
-    transform('<svg />', {
-      plugins: [
-        replaceChildren,
-        jsx,
-        stripAttribute('xmlns'),
-        stripAttribute('path'),
-        removeComments,
-        removeStyle,
-      ],
-      state: { replacement },
-    }),
-  );
+  return {
+    state,
+    svg: state.children
+      .map((replacement: any) =>
+        transform('<svg />', {
+          plugins: [
+            replaceChildren,
+            jsx,
+            stripAttribute('xmlns'),
+            stripAttribute('path'),
+            removeComments,
+            removeStyle,
+          ],
+          state: { replacement },
+        }),
+      )
+      .join('\n'),
+  };
 };

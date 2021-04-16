@@ -2,21 +2,22 @@ import React from 'react';
 import { Box, BoxProps } from 'theme-ui';
 
 export interface <%= name %>Props extends BoxProps {
-  size?: number;
+  width?: number;
+  height?: number;
 }
 
-const <%= name %>Icon: React.FC<<%= name %>Props> = ({size = 30, ...props}) => (
+const <%= name %>: React.FC<<%= name %>Props> = ({width = <%= width %>, height = <%= height %>, ...props}) => (
   <Box
     as="svg"
     // @ts-expect-error
     xmlns="http://www.w3.org/2000/svg"
-    width={size + ''}
-    height={size + ''}
-    viewBox="0 0 30 30"
+    width={String(width)}
+    height={String(width)}
+    viewBox="<%= viewBox %>"
     {...props}
   >
     <%- svg %>
   </Box>
 )
 
-export default <%= name %>Icon;
+export default <%= name %>;

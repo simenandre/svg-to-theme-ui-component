@@ -23,11 +23,24 @@ export async function toComponent(
   } = config;
 
   const optimized = optimize(fileContent, svgoConfig);
-  const svg = await h2x(optimized.data, {}).join('\n');
-  const r = await ejs.renderFile(TEMPLATE_PATH, {
+  const { svg, state } = await h2x(optimized.data, {});
+  let {width, height, viewBox} = state;
+  const [, , w, h] = viewBox.split(' ');
+
+  if (!width) { width = w; }
+  if (!height) { height = h; }
+
+  const templateData = {
     name,
     svg,
-  });
+    viewBox,
+    width: width || 0,
+    height: height || 0,
+  };
+
+  console.log(templateData);
+
+  const r = await ejs.renderFile(TEMPLATE_PATH, templateData);
 
   return prettier.format(r, { parser: 'typescript', ...prettierConfig });
 }

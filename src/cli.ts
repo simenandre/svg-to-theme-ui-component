@@ -7,10 +7,25 @@ import fg from 'fast-glob';
 import fs from 'fs';
 import path from 'path';
 import { toComponent } from './main';
+import * as changeCase from 'change-case';
+
+export type CaseTypes =
+  | 'camelCase'
+  | 'capitalCase'
+  | 'constantCase'
+  | 'dotCase'
+  | 'headerCase'
+  | 'noCase'
+  | 'paramCase'
+  | 'pascalCase'
+  | 'pathCase'
+  | 'sentenceCase'
+  | 'snakeCase';
 
 export interface CliProps {
   in: string;
   out: string;
+  fileNameCase: CaseTypes;
 }
 
 const cli = async () => {
@@ -19,10 +34,7 @@ const cli = async () => {
   invariant(argv.in, 'You have to set --in. Tip: Can be set to **/*.svg');
   invariant(argv.out, 'You have to set --out.');
 
-  console.log({
-    in: argv.in,
-    out: argv.out,
-  });
+  const { fileNameCase = 'paramCase' } = argv;
 
   const entries = await fg(argv.in);
 
@@ -33,7 +45,10 @@ const cli = async () => {
     invariant(name, 'expect name');
     const fileContent = fs.readFileSync(entry, 'utf-8');
     const code = await toComponent(name, fileContent);
-    fs.writeFileSync(path.resolve(argv.out, `${name}.tsx`), code);
+    fs.writeFileSync(
+      path.resolve(argv.out, `${changeCase[fileNameCase](name)}.tsx`),
+      code,
+    );
   }
 };
 
