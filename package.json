@@ -6,6 +6,7 @@
   "files": [
     "dist/**"
   ],
+  "bin": "dist/cli.js",
   "repository": "ssh://git@github.com/cobraz/svg-to-theme-ui-component.git",
   "author": "Simen A. W. Olsen <so@bjerk.io>",
   "license": "Apache-2.0",
