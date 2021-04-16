@@ -12,7 +12,7 @@ const <%= name %>: React.FC<<%= name %>Props> = ({width = <%= width %>, height =
     // @ts-expect-error
     xmlns="http://www.w3.org/2000/svg"
     width={String(width)}
-    height={String(width)}
+    height={String(height)}
     viewBox="<%= viewBox %>"
     {...props}
   >
