@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://www.github.com/cobraz/svg-to-theme-ui-component/compare/v1.0.0...v1.1.0) (2021-04-16)
+
+
+### Features
+
+* Improved package name ([b0acf87](https://www.github.com/cobraz/svg-to-theme-ui-component/commit/b0acf87640e81068cbb4bdb01c26705a56acb1fc))
+
 ## 1.0.0 (2021-04-16)
 
 
