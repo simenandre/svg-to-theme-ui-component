@@ -38,8 +38,6 @@ export async function toComponent(
     height: height || 0,
   };
 
-  console.log(templateData);
-
   const r = await ejs.renderFile(TEMPLATE_PATH, templateData);
 
   return prettier.format(r, { parser: 'typescript', ...prettierConfig });
