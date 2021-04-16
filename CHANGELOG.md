@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.1.1](https://www.github.com/cobraz/svg-to-theme-ui-component/compare/v1.1.0...v1.1.1) (2021-04-16)
+
+
+### Bug Fixes
+
+* add shebang to cli ([31a7c15](https://www.github.com/cobraz/svg-to-theme-ui-component/commit/31a7c15b7acaf23b9e84ad94e53be6332f186e0e))
+
 ## [1.1.0](https://www.github.com/cobraz/svg-to-theme-ui-component/compare/v1.0.0...v1.1.0) (2021-04-16)
 
 
