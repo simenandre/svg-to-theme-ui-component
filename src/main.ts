@@ -4,6 +4,7 @@ import * as ejs from 'ejs';
 import * as prettier from 'prettier';
 import { optimize, OptimizeOptions } from 'svgo';
 import { h2x } from './transform/h2x';
+import * as changeCase from 'change-case';
 
 export interface SvgThemeUIConfig {
   prettierConfig?: prettier.Options;
@@ -25,13 +26,13 @@ export async function toComponent(
   const optimized = optimize(fileContent, svgoConfig);
   const { svg, state } = await h2x(optimized.data, {});
   let {width, height, viewBox} = state;
-  const [, , w, h] = viewBox.split(' ');
+  const [, , w, h] = (viewBox || '').split(' ');
 
   if (!width) { width = w; }
   if (!height) { height = h; }
 
   const templateData = {
-    name,
+    name: changeCase.pascalCase(name),
     svg,
     viewBox,
     width: width || 0,

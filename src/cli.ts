@@ -54,4 +54,4 @@ const cli = async () => {
 
 cli()
   .then(console.log)
-  .catch((e) => console.log(`ERROR: ${e.message}`));
+  // .catch((e) => console.log(`ERROR: ${e.message}`));
