@@ -27,7 +27,7 @@
     "h2x-types": "^1.1.0",
     "prettier": "^2.2.1",
     "svgo": "^2.3.0",
-    "yargs": "^16.2.0"
+    "yargs": "^17.0.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.13.14",
