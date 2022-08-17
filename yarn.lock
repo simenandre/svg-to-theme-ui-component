@@ -921,10 +921,10 @@
   resolved "https://registry.yarnpkg.com/@types/ejs/-/ejs-3.0.6.tgz#aca442289df623bfa8e47c23961f0357847b83fe"
   integrity sha512-fj1hi+ZSW0xPLrJJD+YNwIh9GZbyaIepG26E/gXvp8nCa2pYokxUYO1sK9qjGxp2g8ryZYuon7wmjpwE2cyASQ==
 
-"@types/node@14":
-  version "14.14.41"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-14.14.41.tgz#d0b939d94c1d7bd53d04824af45f1139b8c45615"
-  integrity sha512-dueRKfaJL4RTtSa7bWeTK1M+VH+Gns73oCgzvYfHZywRCoPSd8EkXBL0mZ9unPTveBn+D9phZBaxuzpwjWkW0g==
+"@types/node@18":
+  version "18.7.6"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-18.7.6.tgz#31743bc5772b6ac223845e18c3fc26f042713c83"
+  integrity sha512-EdxgKRXgYsNITy5mjjXjVE/CS8YENSdhiagGrLqjG0pvA2owgJ6i4l7wy/PFZGC0B1/H20lWKN7ONVDNYDZm7A==
 
 "@types/prettier@^2.2.3":
   version "2.2.3"
